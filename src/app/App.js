@@ -1,6 +1,12 @@
 import React from 'react';
 
+import Counter from './components/Counter';
+import Footer from './components/Footer';
 import Header from './components/Header';
+
+
+ 
+
 
 // composing components together to build page/app
 // Hierachy is build, 
@@ -21,6 +27,10 @@ function App() {
             <Header title='Product App'
                     slogan='new year sale!!'
             />
+
+            <Counter />
+
+            <Footer year={2021} company='XYZ, Inc' />
         </div>
     )
 }
