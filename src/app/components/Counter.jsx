@@ -9,16 +9,17 @@ import React, {Component} from 'react';
 
 class Counter extends Component {
     // if child class constructor written, the base class constructor super must be called
-    constructor(){
-        super(); // base class  Component constructor
-        console.log('Counter created')
+    constructor(props){
+        // the base class constructor initialize this.props = props
+        super(props); // base class  Component constructor
+        console.log('Counter created', this.props)
 
         // state, keyword
         // initialize state
         // owned by component, the values can be mutated/changed
         // values should be changed by using setState method
         this.state = {
-            counter: 0,
+            counter: props.startValue,
             clickCount: 0,
             title: 'Counter'
         }
@@ -82,6 +83,7 @@ class Counter extends Component {
         // setState will accept a callback, call the callback at the time of merge state
         console.log('functional setState 1')
 
+        // output of setState callback is passed as input to next setState callback
         this.setState (  (prevState) => {
              console.log('functional setState 1 callled ', prevState)
              // return new state
@@ -94,6 +96,7 @@ class Counter extends Component {
 
         console.log('functional setState 2')
 
+        //prevState is the value from previous setstate callback
         this.setState (  (prevState) => {
              console.log('functional setState 2 callled ', prevState)
              // return new state
@@ -103,7 +106,13 @@ class Counter extends Component {
         } )
 
         console.log('functional setState 2 after')
+    }
 
+    test = () => {
+        //forceUpdate trigger the render async
+        // when there is no state to update, but still if you want render
+        // 3rd party tools, set graph/render graph etc
+        this.forceUpdate(); 
     }
 
     // react keyword function
@@ -133,6 +142,8 @@ class Counter extends Component {
                
                 {/* ES.next way */}
                 <button onClick={this.decrement}>-1</button>
+
+                <button onClick={this.test}>force update</button>
             </div>
         )
     }

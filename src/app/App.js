@@ -2,6 +2,7 @@ import React from 'react';
 
 import Counter from './components/Counter';
 import Footer from './components/Footer';
+import FuncCounter from './components/FuncCounter';
 import Header from './components/Header';
 
 
@@ -28,7 +29,16 @@ function App() {
                     slogan='new year sale!!'
             />
 
-            <Counter />
+            <FuncCounter startValue={100} />
+            <hr />
+            <FuncCounter startValue={600} />
+            <hr />
+
+            <Counter startValue={1000} />
+
+            <hr />
+
+            <Counter startValue={50} />
 
             <Footer year={2021} company='XYZ, Inc' />
         </div>
