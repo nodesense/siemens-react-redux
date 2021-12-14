@@ -7,6 +7,12 @@ Google Chrome React Dev plugin
 
 https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en
 
+## NPM Packages
+
+```
+npm install react-router-dom@^5.1.2
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

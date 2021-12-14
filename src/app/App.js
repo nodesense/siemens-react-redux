@@ -7,7 +7,13 @@ import Footer from './components/Footer';
 import FuncCounter from './components/FuncCounter';
 import Header from './components/Header';
 
-
+import { BrowserRouter as Router, 
+         Route,
+         Switch
+} from 'react-router-dom';
+import About from './components/About';
+import Home from './components/Home';
+import NotFound from './components/NotFound';
  
 
 
@@ -26,28 +32,44 @@ import Header from './components/Header';
 //        title : 'Product app'} passed as props to child component
 function App() {
     return (
-        <div>
-            <Header title='Product App'
-                    slogan='new year sale!!'
-            />
+        <Router>
+            <div>
+                <Header title='Product App'
+                        slogan='new year sale!!'
+                />
 
-            <Checkout />
+                <Switch>
+                    <Route path="/about" component={About} />
 
-            {/* <Cart /> */}
+                    <Route path="/cart">
+                        <Cart />
+                    </Route>
 
-            {/* <FuncCounter startValue={100} />
-            <hr />
-            <FuncCounter startValue={600} />
-            <hr />
+                    <Route path="/counter" render={ () => <Counter />  }>
+                    </Route>
 
-            <Counter startValue={1000} />
+                    <Route path="/">
+                        <Home />
+                    </Route>
 
-            <hr />
+                    <Route path='*'>
+                        <NotFound />
+                    </Route>
+                </Switch>
 
-            <Counter startValue={50} /> */}
+                {/* <Checkout /> */}
+                {/* <Cart /> */}
+                {/* <FuncCounter startValue={100} />
+                <hr />
+                <FuncCounter startValue={600} />
+                <hr />
+                <Counter startValue={1000} />
+                <hr />
+                <Counter startValue={50} /> */}
 
-            <Footer year={2021} company='XYZ, Inc' />
-        </div>
+                <Footer year={2021} company='XYZ, Inc' />
+            </div>
+        </Router>
     )
 }
 
