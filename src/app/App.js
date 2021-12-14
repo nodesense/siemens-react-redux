@@ -14,6 +14,7 @@ import { BrowserRouter as Router,
 import About from './components/About';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
+import ProductList from './components/ProductList';
  
 
 
@@ -48,6 +49,10 @@ function App() {
 
                     <Route path="/checkout">
                         <Checkout />
+                    </Route>
+
+                    <Route path="/products">
+                        <ProductList />
                     </Route>
 
                     <Route path="/counter" render={ () => <Counter startValue={0} />  }>
