@@ -38,24 +38,38 @@ function App() {
                         slogan='new year sale!!'
                 />
 
-                <Switch>
+                {/* Switch picks the first matched router */}
+                 <Switch>
                     <Route path="/about" component={About} />
 
                     <Route path="/cart">
                         <Cart />
                     </Route>
 
-                    <Route path="/counter" render={ () => <Counter />  }>
+                    <Route path="/checkout">
+                        <Checkout />
                     </Route>
 
-                    <Route path="/">
+                    <Route path="/counter" render={ () => <Counter startValue={0} />  }>
+                    </Route>
+
+                    {/* by default, route match starts with 
+                        /mypage
+                        /counter shall match with Route path="/"
+
+                        excat property, force route to check exact match, not start with
+                    */}
+
+                    <Route path="/" exact>
                         <Home />
                     </Route>
 
                     <Route path='*'>
                         <NotFound />
                     </Route>
-                </Switch>
+
+                    </Switch>
+                
 
                 {/* <Checkout /> */}
                 {/* <Cart /> */}
