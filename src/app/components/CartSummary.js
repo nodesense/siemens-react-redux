@@ -20,6 +20,26 @@ import PropTypes from "prop-types";
  
     //TODO: shouldComponentUpdate
 
+    static getDerivedStateFromProps(props, state) {
+        let discount = 0;
+
+        if (props.count >= 10) {
+            discount = 20;
+        } else if (props.count >= 5) {
+            discount = 10;
+        }
+
+        let grandTotal = props.amount - (props.amount * discount / 100);
+
+        // new state with calculated grandTotal and discount, this will be updated with 
+        // this.state
+        return {
+            discount,
+            grandTotal
+        }
+    }
+
+
     recalculate(props) {
         let discount = 0;
 

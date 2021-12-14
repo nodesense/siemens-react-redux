@@ -1,4 +1,5 @@
 import React from 'react';
+import Cart from './components/Cart';
 
 import Counter from './components/Counter';
 import Footer from './components/Footer';
@@ -29,7 +30,9 @@ function App() {
                     slogan='new year sale!!'
             />
 
-            <FuncCounter startValue={100} />
+            <Cart />
+
+            {/* <FuncCounter startValue={100} />
             <hr />
             <FuncCounter startValue={600} />
             <hr />
@@ -38,7 +41,7 @@ function App() {
 
             <hr />
 
-            <Counter startValue={50} />
+            <Counter startValue={50} /> */}
 
             <Footer year={2021} company='XYZ, Inc' />
         </div>

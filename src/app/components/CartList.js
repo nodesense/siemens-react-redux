@@ -34,6 +34,15 @@ import CartItem from "./CartItem";
                 </thead>
                 <tbody>
                     {/* TODO props items map with CartItem */ }
+                    {/* we cannot write statement in jsx, no for loop, no if condition */}
+                    {/* expressions are allowed */}
+
+                    {
+                        items.map(item => <CartItem item={item} 
+                                                    updateItem={this.props.updateItem}
+                                                    removeItem={this.props.removeItem}   
+                        />)
+                    }
 
                 </tbody>
             </table>
