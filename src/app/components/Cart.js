@@ -12,7 +12,7 @@ class Cart extends Component {
 
     static propTypes = {
     }
-    
+
     constructor(props) {
         super(props);
 
@@ -29,7 +29,6 @@ class Cart extends Component {
             }
 
             items.push(item)
-    
         }
 
         this.state = {
@@ -80,7 +79,8 @@ class Cart extends Component {
 
         const items = this.state.items.map (item => {
             if (item.id === id) {
-                return {...item, qty}
+                 return {...item, qty}
+                // item.qty = qty // BAD PART
             } 
 
             return item; // without change
