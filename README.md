@@ -3,7 +3,9 @@
 https://gist.github.com/gopalakrishnan-subramani/195f72a7f273f34a84e9bfc32f4df7a8
 
 
+Google Chrome React Dev plugin
 
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en
 
 # Getting Started with Create React App
 

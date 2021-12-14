@@ -8,18 +8,34 @@ import CartSummary from "./CartSummary";
 
 class Cart extends Component {
     static defaultProps = {
-    
     }
 
     static propTypes = {
-    
     }
+    
     constructor(props) {
         super(props);
 
+
+        const items = []
+        for (let i = 5; i < 2500; i++) {
+            //let id = Math.ceil(Math.random() * 10000);
+            let id = i
+            let item = {
+                id,
+                name: `Product ${id}`,
+                price: Math.ceil(Math.random() * 100),
+                qty: 1
+            }
+
+            items.push(item)
+    
+        }
+
         this.state = {
             items: [ 
-            			{id: 1, name: 'P1', price: 100, qty: 10}
+            			{id: 1, name: 'P1', price: 100, qty: 10},
+                        ...items
             	   ],
             amount: 0, // sum of all items price * qty
             count: 0, // sum of all items qty
@@ -28,7 +44,7 @@ class Cart extends Component {
     }
     
     addItem = () => {
-        let id = Math.ceil(Math.random() * 10000);
+        let id = 3000 + Math.ceil(Math.random() * 10000);
         let item = {
             id,
             name: `Product ${id}`,
@@ -149,9 +165,12 @@ class Cart extends Component {
                 Refresh
             </button>
             
+            {/* (id) => this.removeItem(id) shall crerate a function every time render called */}
+            {/* we pass created function to child component as props */}
+            {/* in cartItem componnet, we used pure componenent that will all props including function */}
 
             <CartList  items={this.state.items}  
-                       removeItem={this.removeItem}
+                       removeItem={this.removeItem }
                        updateItem={this.updateItem}
             />
 

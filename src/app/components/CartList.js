@@ -13,6 +13,20 @@ import CartItem from "./CartItem";
     }
      
     //TODO: shouldComponentUpdate
+    // to decide whether to call render function or not in update cycle
+    // return true - render shall be called, there is data change in props or state
+    // return false - render shall not be called, there is no data change
+    // is not called when we do this.forceUpdate
+    // called when parent render called or this.setState on update cycle
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('CartList shouldComponentUpdate')
+        console.log("CartList next props, state", nextProps, nextState)
+        console.log("CartList current props, state", this.props, this.state)
+
+        console.log('nextProps.items !=  this.props.items', nextProps.items !=  this.props.items)
+        // you may compare all props and all state params
+        return nextProps.items !=  this.props.items;
+    }
     
     render() {
         console.log("CartList Render");
@@ -39,6 +53,7 @@ import CartItem from "./CartItem";
 
                     {
                         items.map(item => <CartItem item={item} 
+                                                    key={item.id}
                                                     updateItem={this.props.updateItem}
                                                     removeItem={this.props.removeItem}   
                         />)

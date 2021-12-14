@@ -1,11 +1,14 @@
 // CartSummary.js
-import React, {Component} from "react";
+import React, {Component, PureComponent} from "react";
 import PropTypes from "prop-types";
 
 //TODO: PropTypes
 
-// TODO: PureComponent
- class CartSummary extends Component {
+// PureComponent, is a derived class from Component in react library
+// PureComponent already implement shouldComponentUpdate function
+// that check current props with next props, current state with next state
+// return true or false based on data change
+ class CartSummary extends PureComponent {
     constructor(props) {
         super(props);
 
@@ -17,9 +20,10 @@ import PropTypes from "prop-types";
  
     //TODO: componentWillMount
     //TODO: componentWillReceiveProps, recalculate 
- 
-    //TODO: shouldComponentUpdate
+  
 
+    // before calling render function
+    // this.setState, parent render 
     static getDerivedStateFromProps(props, state) {
         let discount = 0;
 
