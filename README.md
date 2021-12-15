@@ -19,9 +19,16 @@ https://github.com/nodesense/restful-server
 npm install react-router-dom@^5.1.2
 ```
 
-
 ```
 npm install axios
+```
+
+```
+npm install redux react-redux redux-thunk
+```
+
+```
+npm install reselect
 ```
 
 # Getting Started with Create React App

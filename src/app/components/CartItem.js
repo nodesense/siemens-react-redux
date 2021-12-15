@@ -10,6 +10,21 @@ class CartItem extends PureComponent {
     //TODO: Ref
     //TODO: componentWillMount
     //TODO: state from props, qty
+
+
+    // pre-defined method
+    // called after react component mounted in real dom first time
+    componentDidMount() {
+        // triggre api call, set timer, subscribe, access real dom, ref
+        console.log('CartItem componentDidMount')
+   }
+
+   // pre-defined method
+   // called before removing a react component from memory/real dom
+   componentWillUnmount() {
+       // cancel pending api call, clear timer, unsubscribe
+       console.log('CartItem componentWillUnmount')
+   }
    
     render() {
         let {item,  // passed from cart list

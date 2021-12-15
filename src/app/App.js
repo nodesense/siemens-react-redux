@@ -16,6 +16,7 @@ import Home from './components/Home';
 import NotFound from './components/NotFound';
 import ProductList from './components/ProductList';
  
+import ReduxCart from './redux-cart/containers/Cart';
 
 
 // composing components together to build page/app
@@ -53,6 +54,10 @@ function App() {
 
                     <Route path="/products">
                         <ProductList />
+                    </Route>
+
+                    <Route path='/redux-cart'>
+                        <ReduxCart />
                     </Route>
 
                     <Route path="/counter" render={ () => <Counter startValue={0} />  }>

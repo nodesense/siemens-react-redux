@@ -1,7 +1,7 @@
 // working with input controls
 // formik
 // working with ref
-import React from 'react';
+import React, {createRef} from 'react';
 
 
 class Checkout extends React.Component {
@@ -12,6 +12,8 @@ class Checkout extends React.Component {
             name: '',
             city: ''
         }
+
+        this.nameRef = createRef()
     }
 
     valueChangeHandler = (e) => {
@@ -23,6 +25,13 @@ class Checkout extends React.Component {
         })
     }
 
+
+    componentDidMount() {
+        // current is REAL DOM element accessible at componentDidMount
+        this.nameRef.current.focus(); // set the cursor on input box
+        
+    }
+
     render() {
         return (
             <div>
@@ -30,6 +39,8 @@ class Checkout extends React.Component {
                     Name <input name="name" type="text" 
                                 value={this.state.name}
                                 onChange={this.valueChangeHandler}
+
+                                ref={this.nameRef}
                                 />
                     City <select name="city"   
                                  value={this.state.city}

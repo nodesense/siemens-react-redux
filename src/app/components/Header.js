@@ -20,6 +20,12 @@ const Header = (props) => {
             <NavLink to="/checkout" className={"button"}  activeClassName='success'  >Checkout</NavLink>
             <NavLink to="/about" className={"button"}  activeClassName='success' >About</NavLink>
             <NavLink to="/counter" className={"button"}  activeClassName='success' >Counter</NavLink>
+            
+            <NavLink to="/redux-cart" className={"button"}  activeClassName='success' >
+                Redux Cart
+            </NavLink>
+        
+             
         </div>
     )
 }
